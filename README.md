@@ -128,22 +128,6 @@ GitHub renders PNG figures directly in Markdown. WAV files are shown as download
 
 In GitHub, go to `Settings -> Pages -> Build and deployment -> Source: Deploy from a branch`, select the main branch and `/docs` folder, then save.
 
-## Regenerating the Gallery
-
-After training `results/segment_mixed_5fold_recovery`, regenerate the high-PCC gallery:
-
-```bash
-python code/build_demo_gallery.py \
-  --data-dir data/process_data/merged_htzx_lez_2.5s \
-  --results-dir results/segment_mixed_5fold_recovery \
-  --output-dir docs/demo_gallery \
-  --top-k 6 \
-  --min-pcc 0.90 \
-  --min-gain 0.02 \
-  --sample-rate 1000
-```
-
-The script writes `selected_examples.csv`, `all_candidate_metrics.csv`, waveform PNGs, WAV clips, and `demo_gallery.md`.
 
 ## Citation
 
