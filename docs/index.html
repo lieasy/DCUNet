@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <title>DCUNet Demo Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202124;
+      background: #f7f7f7;
+      line-height: 1.45;
+    }
+    .global-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px 18px 64px;
+      background: #ffffff;
+      min-height: 100vh;
+    }
+    h1 {
+      margin: 0 0 8px;
+      text-align: center;
+      font-size: 34px;
+      font-weight: 700;
+    }
+    h4 {
+      margin: 34px 0 8px;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .lead {
+      margin: 0 auto 22px;
+      max-width: 850px;
+      text-align: center;
+      color: #555;
+    }
+    hr {
+      border: 0;
+      border-top: 1px solid #e5e5e5;
+      margin: 8px 0 18px;
+    }
+    .boxed {
+      border: 1px solid #e6e6e6;
+      border-radius: 3px;
+      background: #fff;
+      padding: 14px;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+    td, th {
+      padding: 13px 12px;
+      border-top: 1px solid #eeeeee;
+      vertical-align: top;
+    }
+    th {
+      text-align: left;
+      color: #333;
+      background: #f2f4f7;
+    }
+    audio {
+      width: 230px;
+      max-width: 100%;
+      display: block;
+      margin-bottom: 9px;
+    }
+    .clip-label {
+      display: block;
+      margin: 0 0 3px;
+      font-weight: 700;
+      color: #333;
+    }
+    details {
+      margin-top: 8px;
+    }
+    summary {
+      cursor: pointer;
+      color: #0b57d0;
+      font-weight: 700;
+    }
+    .waveform {
+      display: block;
+      width: 780px;
+      max-width: 100%;
+      height: auto;
+      margin-top: 12px;
+      border: 1px solid #e5e5e5;
+      background: #fff;
+    }
+    .metric {
+      color: #555;
+      min-width: 210px;
+    }
+    .small {
+      color: #666;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="global-container">
+    <h1>DCUNet Heart Sound Recovery Demo Gallery</h1>
+    <p class="lead">Automatically selected high-PCC examples from held-out segment-mixed test folds. Each row provides the raw left/right in-ear signals, the reference heart sound, and the DCUNet recovered heart sound.</p>
+
+    <h4>Audio Clips and Waveform Comparisons</h4>
+    <hr>
+    <div class="boxed">
+      <p class="small"><i>Click "Reveal waveform" to inspect the aligned left-ear, right-ear, reference, and recovered waveforms. Audio files are 16 kHz PCM WAV for browser compatibility.</i></p>
+      <table>
+        <thead>
+          <tr>
+            <th>Example</th>
+            <th>Metrics</th>
+            <th>Left / Right Ear Raw</th>
+            <th>Reference / Recovered Heart Sound</th>
+            <th>Waveform</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Example 1</b><br>Sample 21<br>Fold 4, segment 298</td>
+            <td class="metric">Recovered PCC: <b>0.9928</b><br>Input PCC: 0.8118 / 0.6929<br>Gain: 0.1810</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank01_sample21_fold4_seg0298_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank01_sample21_fold4_seg0298_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank01_sample21_fold4_seg0298_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank01_sample21_fold4_seg0298_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank01_sample21_fold4_seg0298.png" alt="Example 1 waveform"></details></td>
+          </tr>
+
+          <tr>
+            <td><b>Example 2</b><br>Sample 25<br>Fold 3, segment 22</td>
+            <td class="metric">Recovered PCC: <b>0.9911</b><br>Input PCC: 0.5141 / -0.0378<br>Gain: 0.4770</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank02_sample25_fold3_seg0022_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank02_sample25_fold3_seg0022_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank02_sample25_fold3_seg0022_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank02_sample25_fold3_seg0022_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank02_sample25_fold3_seg0022.png" alt="Example 2 waveform"></details></td>
+          </tr>
+
+          <tr>
+            <td><b>Example 3</b><br>Sample 03<br>Fold 3, segment 244</td>
+            <td class="metric">Recovered PCC: <b>0.9868</b><br>Input PCC: 0.4590 / 0.7425<br>Gain: 0.2444</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank03_sample03_fold3_seg0244_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank03_sample03_fold3_seg0244_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank03_sample03_fold3_seg0244_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank03_sample03_fold3_seg0244_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank03_sample03_fold3_seg0244.png" alt="Example 3 waveform"></details></td>
+          </tr>
+
+          <tr>
+            <td><b>Example 4</b><br>Sample 14<br>Fold 1, segment 17</td>
+            <td class="metric">Recovered PCC: <b>0.9855</b><br>Input PCC: 0.3911 / 0.1536<br>Gain: 0.5943</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank04_sample14_fold1_seg0017_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank04_sample14_fold1_seg0017_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank04_sample14_fold1_seg0017_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank04_sample14_fold1_seg0017_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank04_sample14_fold1_seg0017.png" alt="Example 4 waveform"></details></td>
+          </tr>
+
+          <tr>
+            <td><b>Example 5</b><br>Sample 29<br>Fold 3, segment 74</td>
+            <td class="metric">Recovered PCC: <b>0.9854</b><br>Input PCC: 0.0196 / 0.1330<br>Gain: 0.8524</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank05_sample29_fold3_seg0074_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank05_sample29_fold3_seg0074_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank05_sample29_fold3_seg0074_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank05_sample29_fold3_seg0074_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank05_sample29_fold3_seg0074.png" alt="Example 5 waveform"></details></td>
+          </tr>
+
+          <tr>
+            <td><b>Example 6</b><br>Sample 27<br>Fold 4, segment 11</td>
+            <td class="metric">Recovered PCC: <b>0.9811</b><br>Input PCC: 0.8171 / 0.7808<br>Gain: 0.1640</td>
+            <td>
+              <span class="clip-label">Left ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank06_sample27_fold4_seg0011_left.wav" type="audio/wav"></audio>
+              <span class="clip-label">Right ear raw</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank06_sample27_fold4_seg0011_right.wav" type="audio/wav"></audio>
+            </td>
+            <td>
+              <span class="clip-label">Reference</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank06_sample27_fold4_seg0011_reference.wav" type="audio/wav"></audio>
+              <span class="clip-label">Recovered</span>
+              <audio controls preload="metadata"><source src="demo_gallery/audio/rank06_sample27_fold4_seg0011_recovered.wav" type="audio/wav"></audio>
+            </td>
+            <td><details><summary>Reveal waveform</summary><img class="waveform" src="demo_gallery/images/rank06_sample27_fold4_seg0011.png" alt="Example 6 waveform"></details></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
