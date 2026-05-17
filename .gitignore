@@ -216,3 +216,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project-local data, checkpoints, and generated experiment outputs.
+data/
+results/
+*.pth
+*.pt
+*.ckpt
+*.npy
+*.npz
+*.mat
+
+# Keep curated demo assets in docs/, but ignore ad hoc local gallery reruns.
+docs/demo_gallery_test/
